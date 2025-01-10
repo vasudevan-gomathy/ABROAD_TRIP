@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends' Trip Planner</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        p {
+            line-height: 1.6;
+        }
+        .countdown {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 1.5em;
+            color: #4CAF50;
+        }
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f4f4f9;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Friends' Abroad Trip Planner</h1>
+    </header>
+
+    <div class="container">
+        <h2>Welcome to Our Trip Planner!</h2>
+        <p>
+            A group of friends is planning an exciting abroad trip after August 2025! To make this dream come true,
+            each member will contribute <strong>₹1000 per month</strong> starting January 2025.
+        </p>
+        <p>
+            This website will help us stay organized, track contributions, and keep everyone updated about the trip.
+        </p>
+
+        <h3>Trip Details:</h3>
+        <ul>
+            <li>Start of contributions: January 2025</li>
+            <li>Monthly contribution: ₹1000</li>
+            <li>Planned trip date: After August 2025</li>
+        </ul>
+
+        <div class="countdown">
+            <p id="countdown">Loading countdown...</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Happy Planning! &#x1F30D;</p>
+    </footer>
+
+    <script>
+        function calculateCountdown() {
+            const tripDate = new Date("2025-08-31");
+            const today = new Date();
+            const diffTime = tripDate - today;
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+            if (diffDays > 0) {
+                document.getElementById("countdown").textContent = `Only ${diffDays} days left until the trip!`;
+            } else {
+                document.getElementById("countdown").textContent = "It's time for the trip! Pack your bags!";
+            }
+        }
+
+        calculateCountdown();
+    </script>
+</body>
+</html>
